@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Type {
+    public String Name;
+    public double Size;
+    public double Price;
+    public String Setting;
+    public Type(String Name, double Size , double Price, String Setting) {
+        this.Name = Name;
+        this.Size = Size;
+        this.Price = Price;
+        this.Setting = Setting;
+    }
+    public void total() {
+        System.out.println("品牌型号"+Name);
+        System.out.println("尺寸"+Size);
+        System.out.println("价格"+Price);
+        System.out.println("配置"+Setting);
+    }
+    public static void main(String[] args) {
+        int num,num2;
+        Scanner sr = new Scanner(System.in);
+        Type hw = new Type("华为",5.5,3688.88,"8+128g 全面刘海屏");
+        hw.total();
+        System.out.println("请输入华为手机的库存");
+        num=sr.nextInt();
+        System.out.println("华为手机库存总金额为："+num* hw.Price);
+        Type xm = new Type("小米",5.0,2988.88,"4+64g 全面屏");
+        xm.total();
+        System.out.println("请输入小米手机的库存");
+        num2=sr.nextInt();
+        System.out.println("小米手机的库存金额为："+num2* xm.Price);
+    }
+}
