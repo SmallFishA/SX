@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class cx {
+    public static void d(int money1, int sp, int lt, int bql, double kl, int kqs){
+        System.out.println("剩下的钱还可以买"+money1/sp+"包薯片"+"剩下"+money1%sp+"元");
+        System.out.println("剩下的钱还可以买"+money1/lt+"包辣条"+"剩下"+money1%lt+"元");
+        System.out.println("剩下的钱还可以买"+money1/bql+"个冰淇淋"+"剩下"+money1%bql+"元");
+        System.out.println("剩下的钱还可以买"+(int)(money1/kl)+"个可乐"+"剩下"+money1%kl+"元");
+        System.out.println("剩下的钱还可以买"+money1/kqs+"瓶矿泉水"+"剩下"+money1%kqs+"元");
+    }
+    public static void main(String[] args) {
+        Scanner sr = new Scanner(System.in);
+        int money = 100;
+        int money1;
+        int num;
+        int sp = 6;
+        int lt = 3;
+        int bql = 5;
+        double kl = 3.5;
+        int kqs = 2;
+        System.out.println("商品名称" + " " + "价格");
+        System.out.println("薯片" + "6元");
+        System.out.println("卫龙辣条" + "3元");
+        System.out.println("冰淇淋" + "5元");
+        System.out.println("矿泉水" + "2元");
+        System.out.println("请输入购买矿泉水的数量");
+        num = sr.nextInt();
+        money1 = money - num * 20;
+        if (money1 == 0) {
+            System.out.println("你的钱不足以购买其他物品了");
+        } else if(money1 < 0) {
+            System.out.println("你没有足够的钱");
+        }else if(money1==100){
+            System.out.println("必须购买一箱矿泉水");
+        }
+        else {
+            System.out.println("检测到你拥有：" + money + "元" + "你购买了" + num + "箱水" + "购买矿泉水后剩余:" + money1);
+            switch (money1) {
+                case 80:
+                    d(money1, sp, lt, bql, kl, kqs);
+                    break;
+                case 60:
+                    d(money1, sp, lt, bql, kl, kqs);
+                    break;
+                case 40:
+                    d(money1, sp, lt, bql, kl, kqs);
+                    break;
+                case 20:
+                    d(money1, sp, lt, bql, kl, kqs);
+                    break;
+            }
+        }
+    }
+}
